@@ -14,49 +14,51 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[var(--border)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-[var(--border)] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-[var(--primary-600)] to-[var(--accent-coral)] rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-[var(--primary-600)] to-[var(--accent-coral)] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
               <span className="text-white font-bold text-lg">W</span>
             </div>
-            <span className="font-bold text-xl text-[var(--primary-950)]">
+            <span className="font-bold text-xl text-[var(--primary-950)] group-hover:text-[var(--primary-700)] transition-colors">
               WeCan Academy
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
+          <div className="hidden md:flex items-center space-x-1">
+            {navLinks.slice(0, 3).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[var(--muted-foreground)] hover:text-[var(--primary-600)] font-medium transition-colors duration-200"
+                className="text-[var(--muted-foreground)] hover:text-[var(--primary-600)] font-medium transition-all duration-200 px-4 py-2 rounded-lg hover:bg-[var(--primary-50)]"
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/ai-playground"
-              className="btn-accent inline-flex items-center"
-            >
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className="ml-4">
+              <Link
+                href="/ai-playground"
+                className="btn-accent inline-flex items-center"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-              Try AI
-            </Link>
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+                Try AI
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}

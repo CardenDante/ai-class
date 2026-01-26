@@ -24,47 +24,47 @@ export default function Home() {
             <span className="inline-block px-4 py-2 bg-[var(--accent-coral)]/20 text-[var(--accent-coral)] rounded-full text-sm font-semibold mb-6">
               12-Week Comprehensive AI Course
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Master{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-coral)] to-[var(--accent-gold)]">
                 Artificial Intelligence
               </span>{' '}
               at WeCan Academy
             </h1>
-            <p className="text-xl text-[var(--primary-200)] mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-[var(--primary-200)] mb-8 leading-relaxed">
               From AI fundamentals to building real-world projects. Learn prompt
               engineering, Python basics, AI APIs, and create your own chatbots
               and automation systems.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/course-outline" className="btn-accent text-center text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link href="/course-outline" className="btn-accent text-center text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
                 Explore Course
               </Link>
               <Link
                 href="/ai-playground"
-                className="btn-primary text-center text-lg px-8 py-4"
+                className="btn-primary text-center text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
                 Try AI Playground
               </Link>
             </div>
 
             {/* Quick Stats */}
-            <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-white/20">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-6 sm:gap-8 mt-12 pt-8 border-t border-white/20">
               <div>
-                <div className="text-3xl font-bold text-[var(--accent-coral)]">12</div>
-                <div className="text-[var(--primary-200)]">Weeks</div>
+                <div className="text-2xl sm:text-3xl font-bold text-[var(--accent-coral)]">12</div>
+                <div className="text-sm sm:text-base text-[var(--primary-200)]">Weeks</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[var(--accent-gold)]">3</div>
-                <div className="text-[var(--primary-200)]">Months</div>
+                <div className="text-2xl sm:text-3xl font-bold text-[var(--accent-gold)]">3</div>
+                <div className="text-sm sm:text-base text-[var(--primary-200)]">Months</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-white">100%</div>
-                <div className="text-[var(--primary-200)]">Practical</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white">100%</div>
+                <div className="text-sm sm:text-base text-[var(--primary-200)]">Practical</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[var(--accent-coral)]">1</div>
-                <div className="text-[var(--primary-200)]">Final Project</div>
+                <div className="text-2xl sm:text-3xl font-bold text-[var(--accent-coral)]">1</div>
+                <div className="text-sm sm:text-base text-[var(--primary-200)]">Final Project</div>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function Home() {
               <span className="text-[var(--accent-coral)] font-semibold text-sm uppercase tracking-wider">
                 Understanding AI
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-950)] mt-2 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--primary-950)] mt-2 mb-6">
                 What is Artificial Intelligence?
               </h2>
               <p className="text-[var(--muted-foreground)] text-lg mb-6 leading-relaxed">
@@ -140,7 +140,7 @@ export default function Home() {
             <span className="text-[var(--accent-coral)] font-semibold text-sm uppercase tracking-wider">
               Key Concepts
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-950)] mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--primary-950)] mt-2">
               AI vs Machine Learning vs Deep Learning
             </h2>
           </div>
@@ -264,7 +264,7 @@ export default function Home() {
             <span className="text-[var(--accent-coral)] font-semibold text-sm uppercase tracking-wider">
               Course Overview
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-950)] mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--primary-950)] mt-2">
               What Makes This Course Special
             </h2>
           </div>
@@ -336,18 +336,18 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Start Your AI Journey?
           </h2>
-          <p className="text-xl text-[var(--primary-200)] mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-[var(--primary-200)] mb-8">
             Join WeCan Academy and transform your understanding of artificial
             intelligence from theory to practical skills.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/course-outline" className="btn-accent text-lg px-8 py-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Link href="/course-outline" className="btn-accent text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 text-center">
               View Full Curriculum
             </Link>
-            <Link href="/what-youll-learn" className="btn-primary text-lg px-8 py-4">
+            <Link href="/what-youll-learn" className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 text-center">
               See Learning Outcomes
             </Link>
           </div>
