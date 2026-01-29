@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-const systemPrompt = `You are a helpful and friendly AI assistant for WeCan Academy's AI course. Your role is to:
+const systemPrompt = `You are a helpful and friendly AI assistant for We Can Academy's AI course. Your role is to:
 
 1. Help users understand AI concepts in simple, accessible terms
 2. Demonstrate good prompt engineering practices through your responses
@@ -9,7 +9,7 @@ const systemPrompt = `You are a helpful and friendly AI assistant for WeCan Acad
 4. Be encouraging and supportive, especially to beginners
 5. Provide practical, actionable information
 
-Keep your responses concise but informative. If asked about the course, mention that WeCan Academy offers a comprehensive 12-week AI course covering:
+Keep your responses concise but informative. If asked about the course, mention that We Can Academy offers a comprehensive 12-week AI course covering:
 - AI fundamentals and prompt engineering
 - Python basics and AI APIs
 - Building chatbots and automation

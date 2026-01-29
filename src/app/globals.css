@@ -290,3 +290,84 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Aceternity UI Animations */
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%,-40%) scale(1);
+  }
+}
+
+@keyframes first {
+  0% {
+    transform: rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(300px) rotate(-360deg);
+  }
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(200px) rotate(360deg);
+  }
+}
+
+@keyframes third {
+  0% {
+    transform: rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
+  }
+}
+
+@keyframes fourth {
+  0% {
+    transform: rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(180px) rotate(360deg);
+  }
+}
+
+@keyframes fifth {
+  0% {
+    transform: rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(220px) rotate(-360deg);
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease 0.5s 1 forwards;
+}
+
+.animate-first {
+  animation: first 20s linear infinite;
+}
+
+.animate-second {
+  animation: second 25s linear infinite;
+}
+
+.animate-third {
+  animation: third 22s linear infinite;
+}
+
+.animate-fourth {
+  animation: fourth 28s linear infinite;
+}
+
+.animate-fifth {
+  animation: fifth 24s linear infinite;
+}

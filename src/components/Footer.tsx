@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -8,10 +9,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-[var(--primary-400)] to-[var(--accent-coral)] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">W</span>
+              <div className="relative w-16 h-16 transition-all duration-300 hover:scale-105">
+                <Image
+                  src="/App-Logo.png"
+                  alt="We Can Academy Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <span className="font-bold text-xl">WeCan Academy</span>
             </div>
             <p className="text-[var(--primary-200)] max-w-md">
               Empowering the next generation with AI skills. Learn practical AI
@@ -77,7 +82,7 @@ export default function Footer() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span>info@wecanacademy.com</span>
+                <span>info@We Canacademy.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <svg
@@ -99,7 +104,7 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span>WeCan Academy</span>
+                <span>We Can Academy</span>
               </li>
             </ul>
           </div>
@@ -108,7 +113,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-[var(--primary-800)] mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-[var(--primary-300)] text-sm">
-            &copy; {new Date().getFullYear()} WeCan Academy. All rights reserved.
+            &copy; {new Date().getFullYear()} We Can Academy. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a

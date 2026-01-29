@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const navLinks = [
@@ -19,12 +20,18 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-[var(--primary-600)] to-[var(--accent-coral)] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-              <span className="text-white font-bold text-lg">W</span>
+            <div className="relative w-16 h-16 md:w-20 md:h-20 transition-all duration-300 group-hover:scale-105">
+              <Image
+                src="/App-Logo.png"
+                alt="We Can Academy Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
-            <span className="font-bold text-xl text-[var(--primary-950)] group-hover:text-[var(--primary-700)] transition-colors">
-              WeCan Academy
-            </span>
+            {/* <span className="font-bold text-xl text-[var(--primary-950)] group-hover:text-[var(--primary-700)] transition-colors">
+              We Can Academy
+            </span> */}
           </Link>
 
           {/* Desktop Navigation */}

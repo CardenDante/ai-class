@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { HoverEffect } from '@/components/ui/card-hover-effect';
 
 export default function Home() {
   return (
@@ -29,7 +32,7 @@ export default function Home() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-coral)] to-[var(--accent-gold)]">
                 Artificial Intelligence
               </span>{' '}
-              at WeCan Academy
+              at We Can Academy
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[var(--primary-200)] mb-8 leading-relaxed">
               From AI fundamentals to building real-world projects. Learn prompt
@@ -258,10 +261,10 @@ export default function Home() {
       </section>
 
       {/* Course Highlights */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-[var(--accent-coral)] font-semibold text-sm uppercase tracking-wider">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="text-[var(--accent-coral)] font-semibold text-xs sm:text-sm uppercase tracking-wider">
               Course Overview
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--primary-950)] mt-2">
@@ -269,57 +272,47 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
+          <HoverEffect
+            items={[
               {
+                title: 'Hands-On Learning',
+                description: 'Every week includes practical projects and real-world applications.',
                 icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 ),
-                title: 'Hands-On Learning',
-                description: 'Every week includes practical projects and real-world applications.',
               },
               {
+                title: 'Beginner Friendly',
+                description: 'No prior coding experience required. We start from the basics.',
                 icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 ),
-                title: 'Beginner Friendly',
-                description: 'No prior coding experience required. We start from the basics.',
               },
               {
+                title: 'Industry Tools',
+                description: 'Learn ChatGPT, Python, APIs, Zapier, and more professional tools.',
                 icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
                 ),
-                title: 'Industry Tools',
-                description: 'Learn ChatGPT, Python, APIs, Zapier, and more professional tools.',
               },
               {
+                title: 'Certification',
+                description: 'Complete with a final project presentation and certificate.',
                 icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 ),
-                title: 'Certification',
-                description: 'Complete with a final project presentation and certificate.',
               },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="card-hover p-6 rounded-xl bg-[var(--muted)] border border-[var(--border)]"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-[var(--primary-600)] to-[var(--accent-coral)] rounded-lg flex items-center justify-center text-white mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="font-bold text-[var(--primary-950)] mb-2">{item.title}</h3>
-                <p className="text-sm text-[var(--muted-foreground)]">{item.description}</p>
-              </div>
-            ))}
-          </div>
+            ]}
+            className="max-w-6xl mx-auto"
+          />
         </div>
       </section>
 
@@ -340,7 +333,7 @@ export default function Home() {
             Ready to Start Your AI Journey?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-[var(--primary-200)] mb-8">
-            Join WeCan Academy and transform your understanding of artificial
+            Join We Can Academy and transform your understanding of artificial
             intelligence from theory to practical skills.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

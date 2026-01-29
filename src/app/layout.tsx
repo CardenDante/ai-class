@@ -20,15 +20,15 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "WeCan Academy | AI Course",
+  title: "We Can Academy | AI Course",
   description:
-    "Learn AI fundamentals, prompt engineering, and build real-world AI projects in our comprehensive 12-week course at WeCan Academy.",
+    "Learn AI fundamentals, prompt engineering, and build real-world AI projects in our comprehensive 12-week course at We Can Academy.",
   keywords: [
     "AI course",
     "artificial intelligence",
     "machine learning",
     "prompt engineering",
-    "WeCan Academy",
+    "We Can Academy",
   ],
 };
 
