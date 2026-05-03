@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -55,11 +56,43 @@ export default function ChatWidget() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to get response');
+        let errMsg = 'Failed to get response';
+        try {
+          const data = await response.json();
+          if (data?.error) errMsg = data.error;
+        } catch {}
+        throw new Error(errMsg);
       }
 
-      const data = await response.json();
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.message }]);
+      if (!response.body) {
+        throw new Error('No response body');
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let started = false;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        if (!chunk) continue;
+
+        if (!started) {
+          started = true;
+          setIsLoading(false);
+          setMessages((prev) => [...prev, { role: 'assistant', content: chunk }]);
+        } else {
+          setMessages((prev) => {
+            const last = prev[prev.length - 1];
+            if (!last || last.role !== 'assistant') return prev;
+            return [
+              ...prev.slice(0, -1),
+              { ...last, content: last.content + chunk },
+            ];
+          });
+        }
+      }
     } catch (err) {
       setMessages((prev) => [
         ...prev,
@@ -154,7 +187,33 @@ export default function ChatWidget() {
                       : 'bg-white text-[var(--foreground)] rounded-bl-md shadow-sm border border-gray-100'
                   }`}
                 >
-                  <p className="whitespace-pre-wrap leading-relaxed">{message.content}</p>
+                  {message.role === 'assistant' ? (
+                    <div className="leading-relaxed prose-chat">
+                      <ReactMarkdown
+                        components={{
+                          p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                          ul: ({ children }) => <ul className="list-disc pl-5 mb-2 last:mb-0 space-y-1">{children}</ul>,
+                          ol: ({ children }) => <ol className="list-decimal pl-5 mb-2 last:mb-0 space-y-1">{children}</ol>,
+                          li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                          strong: ({ children }) => <strong className="font-semibold text-[var(--primary-700)]">{children}</strong>,
+                          em: ({ children }) => <em className="italic">{children}</em>,
+                          h1: ({ children }) => <h3 className="font-semibold text-base mb-2">{children}</h3>,
+                          h2: ({ children }) => <h3 className="font-semibold text-base mb-2">{children}</h3>,
+                          h3: ({ children }) => <h3 className="font-semibold text-sm mb-1.5">{children}</h3>,
+                          code: ({ children }) => <code className="bg-gray-100 px-1 py-0.5 rounded text-xs font-mono">{children}</code>,
+                          a: ({ href, children }) => (
+                            <a href={href} target="_blank" rel="noopener noreferrer" className="text-[var(--primary-600)] underline">
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {message.content}
+                      </ReactMarkdown>
+                    </div>
+                  ) : (
+                    <p className="whitespace-pre-wrap leading-relaxed">{message.content}</p>
+                  )}
                 </div>
               </div>
             ))}
